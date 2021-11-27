@@ -14,13 +14,19 @@ const initialState = {
 
 export const todoReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'TEST': {
-            const { email, first_name, last_name } = action.payload
+        case 'UPDATE_TODO': {
+            const { id, title } = action.payload
             return {
                 ...state,
-                email,
-                first_name,
-                last_name,
+                todos: state.todos.map(todo => {
+                    if (todo.id === id) {
+                        return {
+                            ...todo,
+                            title
+                        }
+                    }
+                    return todo
+                })
             }
         }
 
