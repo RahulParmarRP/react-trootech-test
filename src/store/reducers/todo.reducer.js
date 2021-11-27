@@ -30,6 +30,15 @@ export const todoReducer = (state = initialState, action) => {
             }
         }
 
+        case 'DELETE_TODO': {
+            debugger
+            const deleteTodoId = action.payload
+            return {
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== deleteTodoId)
+            }
+        }
+
         default:
             return state
     }

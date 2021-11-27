@@ -11,6 +11,7 @@ const DataTable = ({ todos }) => {
     const [showDeleteConfirmDialog, setShowDeleteConfirmDialog] = useState(false)
     const [editMode, setEditMode] = useState(false)
     const [currentEditingTodo, setCurrentEditingTodo] = useState(null)
+    const [deleteTodoId, setDeleteTodoId] = useState(null)
     const [title, setTitle] = useState('')
     const handleEditClick = (id, index) => {
         const selectedTodo = todos[index]
@@ -27,7 +28,7 @@ const DataTable = ({ todos }) => {
         setEditMode(false)
     }
     const handleDeleteClick = (todoId) => {
-        // dispatch({ type: 'DELETE_TODO', payload: todoId })
+        setDeleteTodoId(todoId)
         setShowDeleteConfirmDialog(true)
     }
 
@@ -63,7 +64,10 @@ const DataTable = ({ todos }) => {
             <ConfirmDialog
                 display={showDeleteConfirmDialog}
                 message="Are you sure you want to delete this task?"
-                onConfirm={() => alert('Delete')}
+                onConfirm={() => {
+                    dispatch({ type: 'DELETE_TODO', payload: deleteTodoId })
+                    setShowDeleteConfirmDialog(false)
+                }}
                 onClose={() => setShowDeleteConfirmDialog(false)} />
         </>
     )
