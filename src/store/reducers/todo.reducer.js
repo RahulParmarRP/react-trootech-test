@@ -2,18 +2,14 @@ import todos from '../../__mock__/todos.json'
 
 const initialState = {
     todos: [...todos],
+
     userName: '',
     id: '',
     gender: '',
     hobby: [],
     age: 18,
     date: new Date(),
-
-
     status: false,
-    first_name: '',
-    last_name: '',
-    node: {},
 }
 
 export const todoReducer = (state = initialState, action) => {
@@ -27,8 +23,6 @@ export const todoReducer = (state = initialState, action) => {
                 last_name,
             }
         }
-
-
 
         default:
             return state
