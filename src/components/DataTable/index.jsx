@@ -108,7 +108,7 @@ const DataTable = ({ todos }) => {
                 </tbody>
             </Table>
             <ConfirmDialog
-                display={showDeleteConfirmDialog}
+                show={showDeleteConfirmDialog}
                 message={CONFIRM_DELETE_MESSAGE}
                 onConfirm={() => {
                     dispatch({ type: 'DELETE_TODO', payload: deleteTodoId })

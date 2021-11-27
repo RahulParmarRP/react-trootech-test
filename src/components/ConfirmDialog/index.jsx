@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
-const ConfirmDialog = ({ display, heading = "Confirm", message, onClose, onConfirm }) => {
+const ConfirmDialog = ({ show, heading = "Confirm", message, onClose, onConfirm }) => {
     return (
-        <Modal show={display} onHide={onClose}>
+        <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{heading}</Modal.Title>
             </Modal.Header>
