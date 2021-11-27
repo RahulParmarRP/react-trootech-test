@@ -9,6 +9,11 @@ const Dashboard = () => {
     const todos = useSelector((state) => state.todosData.todos)
     return (
         <Container className="mt-5">
+            <Row className="mb-3">
+                <Col>
+                    <button>Add To-Do</button>
+                </Col>
+            </Row>
             <Row>
                 <Col>
                     <DataTable todos={todos} />

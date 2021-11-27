@@ -15,16 +15,18 @@ const DataTable = ({ todos }) => {
     const [deleteTodoId, setDeleteTodoId] = useState(null)
     const [title, setTitle] = useState('')
     const [username, setUsername] = useState('')
-    const handleEditClick = (id, index) => {
-        const selectedTodo = todos[index]
+    const handleEditClick = (todoId) => {
+        const selectedTodo = todos.find(todo => todo.id === todoId)
         setCurrentEditingTodo(selectedTodo)
         setTitle(selectedTodo.title)
+        setUsername(selectedTodo.username)
         setEditMode(true)
     }
     const handleUpdateClick = (id) => {
         const updatedTodo = {
             ...currentEditingTodo,
             title,
+            username,
         }
         dispatch({ type: 'UPDATE_TODO', payload: updatedTodo })
         setEditMode(false)
