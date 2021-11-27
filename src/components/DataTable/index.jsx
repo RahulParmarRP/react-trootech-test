@@ -44,7 +44,7 @@ const DataTable = ({ todos }) => {
                 </thead>
                 <tbody>
                     {todos.map((todo, index) => (
-                        <tr>
+                        <tr key={todo.title}>
                             <td>{todo.id}</td>
                             <td>
                                 {(editMode && currentEditingTodo.id === todo.id)

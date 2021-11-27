@@ -4,10 +4,11 @@ import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
 import DataTable from '../../components/DataTable'
 import { useSelector } from 'react-redux'
+
 const Dashboard = () => {
     const todos = useSelector((state) => state.todosData.todos)
     return (
-        <Container>
+        <Container className="mt-5">
             <Row>
                 <Col>
                     <DataTable todos={todos} />
