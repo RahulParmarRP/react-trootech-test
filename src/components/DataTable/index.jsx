@@ -29,7 +29,11 @@ const DataTable = ({ todos }) => {
                 {todos.map((todo, index) => (
                     <tr>
                         <td>{todo.id}</td>
-                        <td>{todo.title}</td>
+                        <td>
+                            {(editMode && currentEditTodo.id === todo.id)
+                                ? (<input value={todo.title}></input>)
+                                : (`${todo.title}`)}
+                        </td>
                         <td>
                             {(editMode && currentEditTodo.id === todo.id)
                                 ? (<DoneIcon onClick={() => handleUpdateClick(todo.id)} />)
