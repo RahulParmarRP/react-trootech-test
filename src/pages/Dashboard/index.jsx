@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 import DataTable from '../../components/DataTable'
 import { useSelector } from 'react-redux'
 import AddToDoFormModalPopup from '../../components/AddToDoFormModalPopup'
@@ -16,7 +17,7 @@ const Dashboard = () => {
     <Container className="mt-5">
       <Row className="mb-3">
         <Col>
-          <button onClick={() => handleAddToDoClick()}>Add To-Do</button>
+          <Button onClick={() => handleAddToDoClick()}>Add To-Do</Button>
           <AddToDoFormModalPopup
             show={showAddToDoFormDialog}
             onClose={() => setAddToDoFormDialog(false)}

@@ -27,6 +27,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   return (
     <Modal
       show={show}
+      onHide={onClose}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
