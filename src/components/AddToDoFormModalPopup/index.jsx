@@ -13,9 +13,9 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
     const [username, setUsername] = useState('')
     const dispatch = useDispatch()
     const handleSubmitClick = () => {
-        debugger
         const createToDo = { gender, active, title, age, username, date }
         dispatch({ type: 'ADD_TODO', payload: createToDo })
+        onClose()
     }
     return (
         <Modal
