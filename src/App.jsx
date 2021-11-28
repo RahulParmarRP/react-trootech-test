@@ -1,12 +1,8 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import { Provider } from 'react-redux'
 import store from './store'
-import NavbarHeader from "./layout/NavbarHeader"
+import NavbarHeader from './layout/NavbarHeader'
 
 function App() {
   return (

@@ -1,107 +1,93 @@
 [
-    {
-        "id": "61a21f13ebcbf66211924cc5",
-        "index": 0,
-        "guid": "20b3bf7b-8826-4fbd-aa02-7f5f0d694c86",
-        "status": false,
-        "age": 43,
-        "hobby": [
-            "sports"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "excepteur culpa pariatur et commodo",
-        "username": "Beard",
-        "gender": "male",
-        "date": "2016-04-28"
-    },
-    {
-        "id": "61a21f13809ab2c26a7910f1",
-        "index": 1,
-        "guid": "ab2cd443-c938-4ef7-9c79-46dbdfae35df",
-        "status": true,
-        "age": 47,
-        "hobby": [
-            "music"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "eu laborum magna eu reprehenderit",
-        "username": "Rosalinda",
-        "gender": "female",
-        "date": "2020-10-24"
-    },
-    {
-        "id": "61a21f1346b0f6008b96b2ed",
-        "index": 2,
-        "guid": "94c02af8-0ee6-4d0f-ae03-623a97d1cbcc",
-        "status": true,
-        "age": 53,
-        "hobby": [
-            "reading"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "quis laboris consectetur sint elit",
-        "username": "Mcclain",
-        "gender": "male",
-        "date": "2015-10-15"
-    },
-    {
-        "id": "61a21f13dddc746f06edce97",
-        "index": 3,
-        "guid": "0968624c-2b4c-42fe-8c32-a5fd23795c94",
-        "status": false,
-        "age": 25,
-        "hobby": [
-            "reading"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "voluptate consectetur nulla dolor tempor",
-        "username": "Polly",
-        "gender": "female",
-        "date": "2016-12-19"
-    },
-    {
-        "id": "61a21f1365f3ae046bcea208",
-        "index": 4,
-        "guid": "3b203f00-0d4a-4539-b4c8-85c7f0e03890",
-        "status": false,
-        "age": 36,
-        "hobby": [
-            "music"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "excepteur pariatur quis aute et",
-        "username": "Castillo",
-        "gender": "male",
-        "date": "2015-06-13"
-    },
-    {
-        "id": "61a21f13310eb1ac4260577c",
-        "index": 5,
-        "guid": "5c6270dc-b33b-4ee4-bbe1-0591827efb7a",
-        "status": false,
-        "age": 31,
-        "hobby": [
-            "sports"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "sint veniam laborum enim irure",
-        "username": "Santana",
-        "gender": "male",
-        "date": "2018-07-30"
-    },
-    {
-        "id": "61a21f138b1e916f48e2b8ba",
-        "index": 6,
-        "guid": "ec3a5c67-59a1-41f2-9fe4-42ccbc63e6f5",
-        "status": false,
-        "age": 24,
-        "hobby": [
-            "sports"
-        ],
-        "name": "<ReferenceError: lor is not defined>",
-        "title": "fugiat eu ea proident esse",
-        "username": "Church",
-        "gender": "male",
-        "date": "2016-11-13"
-    }
+  {
+    "id": "61a21f13ebcbf66211924cc5",
+    "index": 0,
+    "guid": "20b3bf7b-8826-4fbd-aa02-7f5f0d694c86",
+    "status": false,
+    "age": 43,
+    "hobby": ["sports"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "excepteur culpa pariatur et commodo",
+    "username": "Beard",
+    "gender": "male",
+    "date": "2016-04-28"
+  },
+  {
+    "id": "61a21f13809ab2c26a7910f1",
+    "index": 1,
+    "guid": "ab2cd443-c938-4ef7-9c79-46dbdfae35df",
+    "status": true,
+    "age": 47,
+    "hobby": ["music"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "eu laborum magna eu reprehenderit",
+    "username": "Rosalinda",
+    "gender": "female",
+    "date": "2020-10-24"
+  },
+  {
+    "id": "61a21f1346b0f6008b96b2ed",
+    "index": 2,
+    "guid": "94c02af8-0ee6-4d0f-ae03-623a97d1cbcc",
+    "status": true,
+    "age": 53,
+    "hobby": ["reading"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "quis laboris consectetur sint elit",
+    "username": "Mcclain",
+    "gender": "male",
+    "date": "2015-10-15"
+  },
+  {
+    "id": "61a21f13dddc746f06edce97",
+    "index": 3,
+    "guid": "0968624c-2b4c-42fe-8c32-a5fd23795c94",
+    "status": false,
+    "age": 25,
+    "hobby": ["reading"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "voluptate consectetur nulla dolor tempor",
+    "username": "Polly",
+    "gender": "female",
+    "date": "2016-12-19"
+  },
+  {
+    "id": "61a21f1365f3ae046bcea208",
+    "index": 4,
+    "guid": "3b203f00-0d4a-4539-b4c8-85c7f0e03890",
+    "status": false,
+    "age": 36,
+    "hobby": ["music"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "excepteur pariatur quis aute et",
+    "username": "Castillo",
+    "gender": "male",
+    "date": "2015-06-13"
+  },
+  {
+    "id": "61a21f13310eb1ac4260577c",
+    "index": 5,
+    "guid": "5c6270dc-b33b-4ee4-bbe1-0591827efb7a",
+    "status": false,
+    "age": 31,
+    "hobby": ["sports"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "sint veniam laborum enim irure",
+    "username": "Santana",
+    "gender": "male",
+    "date": "2018-07-30"
+  },
+  {
+    "id": "61a21f138b1e916f48e2b8ba",
+    "index": 6,
+    "guid": "ec3a5c67-59a1-41f2-9fe4-42ccbc63e6f5",
+    "status": false,
+    "age": 24,
+    "hobby": ["sports"],
+    "name": "<ReferenceError: lor is not defined>",
+    "title": "fugiat eu ea proident esse",
+    "username": "Church",
+    "gender": "male",
+    "date": "2016-11-13"
+  }
 ]

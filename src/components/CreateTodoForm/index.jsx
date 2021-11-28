@@ -1,11 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const CreateToDoForm = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+  return <div></div>
+}
 
-export default CreateToDoForm;
+export default CreateToDoForm
