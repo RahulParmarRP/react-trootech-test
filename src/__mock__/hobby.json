@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "sports",
+        "checked": false
+    },
+    {
+        "id": 2,
+        "name": "reading",
+        "checked": false
+    },
+    {
+        "id": 3,
+        "name": "music",
+        "checked": false
+    }
+]
