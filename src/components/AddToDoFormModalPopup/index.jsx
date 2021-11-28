@@ -2,22 +2,21 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { GENDER_ARRAY } from '../../constants'
-
+import { useDispatch } from 'react-redux'
 
 const AddToDoFormModalPopup = ({ show, onClose }) => {
     const [gender, setGender] = useState(GENDER_ARRAY[1])
     const [age, setAge] = useState(18)
     const [active, setActive] = useState(true)
     const [date, setDate] = useState(null)
-    const handleChange = (event) => {
-        setGender(event.target.value)
-    }
+    const [title, setTitle] = useState('')
+    const [username, setUsername] = useState('')
+    const dispatch = useDispatch()
     const handleSubmitClick = () => {
         debugger
-        console.log(gender)
+        const createToDo = { gender, active, title, age, username, date }
+        dispatch({ type: 'ADD_TODO', payload: createToDo })
     }
-    const [title, setTitle] = useState('')
-
     return (
         <Modal
             show={show}
@@ -32,21 +31,10 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
             </Modal.Header>
             <Modal.Body>
                 <form>
-                    <input type="text" placeholder="Username" pattern="[a-zA-Z]" />
+                    <input type="text" onChange={(e) => setUsername(e.target.value)} placeholder="Username" value={username} />
                     <br />
                     <br />
                     <div>
-                        {/* <label>
-                            <input type="radio" name="gender" value="male"
-                                checked={gender === GENDER_ARRAY[0]} />
-                            Male
-                        </label>
-                        <br />
-                        <label>
-                            <input type="radio" name="gender" value="female"
-                                checked={gender === GENDER_ARRAY[1]} />
-                            Female
-                        </label> */}
                         <div onChange={(e) => setGender(e.target.value)}>
                             {GENDER_ARRAY.map((g) => (
                                 <label>
@@ -65,7 +53,8 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
                     <input type="date" defaultValue={new Date()} name="date"
                         onChange={(e) => setDate(e.target.value)} />
                     <br />
-                    <input type="text" placeholder="Task Name" />
+                    <input type="text" placeholder="Task Name" value={title}
+                        onChange={(e) => setTitle(e.target.value)} />
                     <br />
                     <select name="status" onChange={(e) => setActive(e.target.value)}>
                         <option value={true} selected={active === true}>Active</option>
