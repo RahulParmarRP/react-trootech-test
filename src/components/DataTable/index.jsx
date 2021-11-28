@@ -77,11 +77,11 @@ const DataTable = ({ todos }) => {
               </td>
               <td>
                 <input type="checkbox" name="hobby" value="test" />
-                <label for="coding">Coding</label>
+                <label htmlFor="hobby">Coding</label>
                 <input type="checkbox" name="hobby" value="music" />
-                <label for="coding">Music</label>
+                <label htmlFor="hobby">Music</label>
                 <input type="checkbox" name="hobby" value="sports" />
-                <label for="coding">Sports</label>
+                <label htmlFor="hobby">Sports</label>
               </td>
 
               <td>

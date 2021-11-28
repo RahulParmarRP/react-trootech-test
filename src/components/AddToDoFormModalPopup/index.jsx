@@ -8,21 +8,30 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   const [gender, setGender] = useState(GENDER_ARRAY[1])
   const [age, setAge] = useState(18)
   const [active, setActive] = useState(true)
-  const [date, setDate] = useState(null)
+  const [date, setDate] = useState(new Date().toLocaleDateString("fr-CA"))
   const [title, setTitle] = useState('')
   const [username, setUsername] = useState('')
   const dispatch = useDispatch()
 
-  const checkValidations = () => {
-    if (title.length > 0 && username.length > 0 && date !== null) {
-      return true
+  const isFormValid = ({ username }) => {
+    if (username.length > 15) {
+      alert('Username must be less than 15 characters')
+      return false
     }
-    return false
+    return true
   }
   const handleSubmitClick = () => {
     const createToDo = { gender, active, title, age, username, date }
-    dispatch({ type: 'ADD_TODO', payload: createToDo })
-    onClose()
+    if (isFormValid(createToDo)) {
+      dispatch({ type: 'ADD_TODO', payload: createToDo })
+      onClose()
+    }
+  }
+  const handleUserNameChange = (e) => {
+    const regex = /^[A-Za-z ]+$/
+    if (e.target.value === "" || regex.test(e.target.value)) {
+      setUsername(e.target.value)
+    }
   }
   return (
     <Modal
@@ -39,53 +48,55 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
       <Modal.Body className="centered-content">
         <form>
           <input
+            className="form-field"
             type="text"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleUserNameChange}
             placeholder="Username"
             value={username}
+            maxLength="15"
           />
-          <br />
-          <br />
-          <div>
-            <div onChange={(e) => setGender(e.target.value)}>
-              {GENDER_ARRAY.map((g) => (
-                <label>
-                  <input
-                    type="radio"
-                    value={g}
-                    name="gender"
-                    checked={g === gender}
-                  />
-                  {g.toUpperCase()}
-                </label>
-              ))}
-            </div>
+          <div
+            className="form-field"
+            onChange={(e) => setGender(e.target.value)}>
+            {GENDER_ARRAY.map((g) => (
+              <label className="gender-label" key={g}>
+                <input
+                  type="radio"
+                  value={g}
+                  name="gender"
+                  checked={g === gender}
+                />
+                {g.toUpperCase()}
+              </label>
+            ))}
           </div>
-          <br />
-          <span>{age}</span>
+          <div className="custom-range form-field">
+            <span>{age}</span>
+            <input
+              type="range"
+              min="18"
+              max="55"
+              value={age}
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </div>
           <input
-            type="range"
-            min="18"
-            max="55"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-          />
-          <br />
-          <input
+            className="form-field"
             type="date"
-            defaultValue={new Date()}
+            defaultValue={date}
             name="date"
             onChange={(e) => setDate(e.target.value)}
           />
-          <br />
           <input
+            className="form-field"
             type="text"
             placeholder="Task Name"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
-          <br />
-          <select name="status" onChange={(e) => setActive(e.target.value)}>
+          <select
+            className="form-field"
+            name="status" onChange={(e) => setActive(e.target.value)}>
             <option value={true} selected={active === true}>
               Active
             </option>
