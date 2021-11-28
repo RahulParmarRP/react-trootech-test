@@ -31,11 +31,12 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className="add-to-do-form-modal-popup"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">Add To Do</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="centered-content">
         <form>
           <input
             type="text"

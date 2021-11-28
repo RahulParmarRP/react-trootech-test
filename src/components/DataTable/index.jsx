@@ -41,7 +41,6 @@ const DataTable = ({ todos }) => {
       <Table striped bordered responsive>
         <thead>
           <tr>
-            <th>#</th>
             <th>Username</th>
             <th>Gender</th>
             <th>Hobby</th>
@@ -55,7 +54,6 @@ const DataTable = ({ todos }) => {
         <tbody>
           {todos.map((todo, index) => (
             <tr key={todo.guid}>
-              <td>{index}</td>
               <td>
                 {' '}
                 {editMode && currentEditingTodo.id === todo.id ? (
@@ -68,7 +66,7 @@ const DataTable = ({ todos }) => {
                 )}
               </td>
               <td>
-                <div onChange={() => {}}>
+                <div onChange={() => { }}>
                   {GENDER_ARRAY.map((gender) => (
                     <>
                       <input type="radio" value={gender} name="gender" />

@@ -3,7 +3,7 @@ import Dashboard from './pages/Dashboard'
 import { Provider } from 'react-redux'
 import store from './store'
 import NavbarHeader from './layout/NavbarHeader'
-
+import './assets/styles/style.css'
 function App() {
   return (
     <BrowserRouter>
