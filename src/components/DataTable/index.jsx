@@ -14,6 +14,7 @@ const DataTable = ({ todos }) => {
   const [isEditing, setIsEditing] = useState(false)
   const [currentEditingTodo, setCurrentEditingTodo] = useState(null)
   const [deleteTodoId, setDeleteTodoId] = useState(null)
+
   const [gender, setGender] = useState(null)
   const [title, setTitle] = useState('')
   const [username, setUsername] = useState('')
@@ -33,7 +34,7 @@ const DataTable = ({ todos }) => {
       ...currentEditingTodo,
       title,
       username,
-      age
+      age,
     }
     dispatch({ type: 'UPDATE_TODO', payload: updatedTodo })
     setIsEditing(false)
@@ -114,7 +115,6 @@ const DataTable = ({ todos }) => {
                     ))}
                   </div>
                 </td>
-
                 <td>
                   <AgeRange
                     className="custom-range form-field"

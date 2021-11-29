@@ -96,11 +96,12 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
           />
           <select
             className="form-field"
-            name="status" onChange={(e) => setActive(e.target.value)}>
-            <option value={true} selected={active === true}>
+            name="status" defaultValue={false}
+            onChange={(e) => setActive(e.target.value)}>
+            <option value={true}>
               Active
             </option>
-            <option value={false} selected={active === false}>
+            <option value={false}>
               Inactive
             </option>
           </select>
