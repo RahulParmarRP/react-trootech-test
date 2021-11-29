@@ -20,6 +20,10 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
       alert('Username cant be empty!')
       return false
     }
+    if (title === '') {
+      alert('Task Name cant be empty!')
+      return false
+    }
     return true
   }
   const handleSubmitClick = () => {
