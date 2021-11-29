@@ -100,7 +100,6 @@ const DataTable = ({ todos }) => {
                             type="radio"
                             value={gender}
                             defaultChecked={todo.gender === g}
-                            checked={isEditMode && (gender === g)}
                             disabled={!isEditMode}
                             onChange={(e) => setGender(e.currentTarget.value)}
                           />
