@@ -82,18 +82,20 @@ const DataTable = ({ todos }) => {
                   )}
                 </td>
                 <td>
-                  <fieldset className="form-field" value={gender}>
-                    {GENDER_LIST.map((g) => (
-                      <label className="gender-label" key={g}>
-                        <input
-                          type="radio"
-                          name="gender"
-                          // value={g}
-                          defaultValue={Boolean(g === todo.gender)}
-                        />
-                        {g.toUpperCase()}
-                      </label>
-                    ))}
+                  <fieldset className="form-field">
+                    {GENDER_LIST.map((g, i) => {
+                      debugger
+                      return (
+                        <label className="gender-label" key={g}>
+                          <input
+                            type="radio"
+                            value={g}
+                            checked={Boolean(todo.gender === GENDER_LIST[i])}
+                          />
+                          {g.toUpperCase()}
+                        </label>
+                      )
+                    })}
                   </fieldset>
                   {/* <div
                     className="form-field"
@@ -110,8 +112,8 @@ const DataTable = ({ todos }) => {
                           type="checkbox"
                           name="hobby"
                           value={h}
-                          defaultChecked={todo?.hobby?.includes(h)}
-                          onChange={() => {}}
+                          defaultChecked={todo?.hobby.includes(h)}
+                          onChange={() => { }}
                           disabled={!isEditMode}
                         />
                         {h}
