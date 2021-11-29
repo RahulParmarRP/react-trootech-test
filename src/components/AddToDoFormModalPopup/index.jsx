@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import { GENDER_LIST } from '../../constants'
 import { useDispatch } from 'react-redux'
+import AgeRange from '../AgeRange'
 
 const AddToDoFormModalPopup = ({ show, onClose }) => {
   const [gender, setGender] = useState(GENDER_LIST[1])
@@ -15,8 +16,8 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   const dispatch = useDispatch()
 
   const isFormValid = ({ username }) => {
-    if (username.length > 15) {
-      alert('Username must be less than 15 characters')
+    if (username === '') {
+      alert('Username cant be empty!')
       return false
     }
     return true
@@ -72,16 +73,14 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
               </label>
             ))}
           </div>
-          <div className="custom-range form-field">
-            <span>{age}</span>
-            <input
-              type="range"
-              min="18"
-              max="55"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-            />
-          </div>
+          <AgeRange
+            className="custom-range form-field"
+            defaultValue={age}
+            value={age}
+            min={18}
+            max={55}
+            onChange={(e) => setAge(e.target.value)}
+          />
           <input
             className="form-field"
             type="date"
