@@ -108,15 +108,12 @@ const DataTable = ({ todos }) => {
                         <input type="checkbox" name="hobby"
                           value={h}
                           defaultChecked={todo.hobby.includes(h)}
-                          onChange={() => { }} />
+                          onChange={() => { }}
+                          disabled={!isEditMode}
+                        />
                         {h}
                       </label>
                     ))}
-                    {/* 
-                    <input type="checkbox" name="hobby" value="music" />
-                    <label htmlFor="hobby">Music</label>
-                    <input type="checkbox" name="hobby" value="sports" />
-                    <label htmlFor="hobby">Sports</label> */}
                   </div>
                 </td>
 
@@ -126,7 +123,7 @@ const DataTable = ({ todos }) => {
                     defaultValue={todo.age}
                     min={18}
                     max={55}
-                    isEditing={isEditMode}
+                    disabled={!isEditMode}
                     ref={ageRef}
                     onChange={(e) => setAge(e.target.value)}
                   />
@@ -145,7 +142,7 @@ const DataTable = ({ todos }) => {
                   )}
                 </td>
                 <td>
-                  <select name="status" disabled={!isEditing} defaultValue={todo.status}>
+                  <select name="status" disabled={!isEditMode} defaultValue={todo.status}>
                     <option value={true}>
                       Active
                     </option>
