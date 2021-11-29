@@ -110,7 +110,7 @@ const DataTable = ({ todos }) => {
                           type="checkbox"
                           name="hobby"
                           value={h}
-                          defaultChecked={todo.hobby.includes(h)}
+                          defaultChecked={todo?.hobby?.includes(h)}
                           onChange={() => {}}
                           disabled={!isEditMode}
                         />

@@ -65,7 +65,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
                   type="radio"
                   value={g}
                   name="gender"
-                  checked={g === gender}
+                  defaultChecked={g === gender}
                 />
                 {g.toUpperCase()}
               </label>
