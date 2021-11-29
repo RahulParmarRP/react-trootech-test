@@ -92,8 +92,7 @@ const DataTable = ({ todos }) => {
                 </td>
                 <td>
                   <fieldset className="form-field">
-                    {GENDER_LIST.map((g, i) => {
-                      debugger
+                    {GENDER_LIST.map((g) => {
                       return (
                         <label className="gender-label" key={g}>
                           <input
