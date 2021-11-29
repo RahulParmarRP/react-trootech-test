@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import { GENDER_ARRAY } from '../../constants'
+import { GENDER_LIST } from '../../constants'
 import { useDispatch } from 'react-redux'
 
 const AddToDoFormModalPopup = ({ show, onClose }) => {
-  const [gender, setGender] = useState(GENDER_ARRAY[1])
+  const [gender, setGender] = useState(GENDER_LIST[1])
   const [age, setAge] = useState(18)
   const [active, setActive] = useState(true)
   const [date, setDate] = useState(new Date().toLocaleDateString("fr-CA"))
@@ -58,7 +58,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
           <div
             className="form-field"
             onChange={(e) => setGender(e.target.value)}>
-            {GENDER_ARRAY.map((g) => (
+            {GENDER_LIST.map((g) => (
               <label className="gender-label" key={g}>
                 <input
                   type="radio"
