@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 
-const AgeRange = ({ defaultValue, ref, isEditing, ...rest }) => {
-    const [age, setAge] = useState(defaultValue)
+const AgeRange = ({ defaultValue, ref, isEditing, onChange, ...rest }) => {
+    const [value, setValue] = useState(defaultValue)
+    const handleChange = (e) => {
+        setValue(e.target.value)
+        onChange(e)
+    }
     return (
         <div>
-            <span>{age}</span>
+            <span>{value}</span>
             <input
                 {...rest}
                 type="range"
                 ref={element => ref = element}
-                value={age}
+                value={value}
                 disabled={!isEditing}
-                onChange={(e) => setAge(e.target.value)}
+                onChange={handleChange}
             />
         </div>
     )
