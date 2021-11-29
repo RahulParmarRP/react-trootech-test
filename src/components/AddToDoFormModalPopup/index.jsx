@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 
 const AddToDoFormModalPopup = ({ show, onClose }) => {
   const [gender, setGender] = useState(GENDER_LIST[1])
-  const [age, setAge] = useState(18)
+  const [age, setAge] = useState(24)
   const [active, setActive] = useState(true)
   const [date, setDate] = useState(new Date().toLocaleDateString('fr-CA'))
   const [title, setTitle] = useState('')
