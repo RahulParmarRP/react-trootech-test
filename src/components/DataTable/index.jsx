@@ -85,10 +85,8 @@ const DataTable = ({ todos }) => {
                         <input
                           type="radio"
                           name="gender"
-                          value={g}
-                          defaultChecked={Boolean(g === todo.gender)}
-                          // checked={Boolean(g === todo.gender)}
-                          onChange={(e) => setGender(e.target.value)}
+                          // value={g}
+                          defaultValue={Boolean(g === todo.gender)}
                         />
                         {g.toUpperCase()}
                       </label>
@@ -104,7 +102,7 @@ const DataTable = ({ todos }) => {
                 <td>
                   <div className="checkbox-wrapper">
                     {HOBBY_LIST.map((h) => (
-                      <label htmlFor="hobby">
+                      <label htmlFor="hobby" key={h}>
                         <input type="checkbox" name="hobby"
                           value={h}
                           defaultChecked={todo.hobby.includes(h)}
@@ -124,7 +122,6 @@ const DataTable = ({ todos }) => {
                     min={18}
                     max={55}
                     disabled={!isEditMode}
-                    ref={ageRef}
                     onChange={(e) => setAge(e.target.value)}
                   />
                 </td>

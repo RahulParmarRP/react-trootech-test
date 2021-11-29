@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const AgeRange = ({ defaultValue, ref, onChange, ...rest }) => {
+const AgeRange = ({ defaultValue, onChange, ...rest }) => {
     const [value, setValue] = useState(defaultValue)
     const handleChange = (e) => {
         setValue(e.target.value)
@@ -12,7 +12,6 @@ const AgeRange = ({ defaultValue, ref, onChange, ...rest }) => {
             <input
                 {...rest}
                 type="range"
-                ref={element => ref = element}
                 value={value}
                 onChange={handleChange}
             />
