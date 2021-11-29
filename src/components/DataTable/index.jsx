@@ -5,7 +5,11 @@ import DoneIcon from '@mui/icons-material/Done'
 import DeleteIcon from '@mui/icons-material/Delete'
 import { useDispatch } from 'react-redux'
 import ConfirmDialog from '../ConfirmDialog'
-import { CONFIRM_DELETE_MESSAGE, GENDER_LIST, HOBBY_LIST } from '../../constants'
+import {
+  CONFIRM_DELETE_MESSAGE,
+  GENDER_LIST,
+  HOBBY_LIST,
+} from '../../constants'
 import AgeRange from '../AgeRange'
 
 const DataTable = ({ todos }) => {
@@ -78,9 +82,7 @@ const DataTable = ({ todos }) => {
                   )}
                 </td>
                 <td>
-
-                  <fieldset className="form-field" value={gender}
-                  >
+                  <fieldset className="form-field" value={gender}>
                     {GENDER_LIST.map((g) => (
                       <label className="gender-label" key={g}>
                         <input
@@ -104,10 +106,12 @@ const DataTable = ({ todos }) => {
                   <div className="checkbox-wrapper">
                     {HOBBY_LIST.map((h) => (
                       <label htmlFor="hobby" key={h}>
-                        <input type="checkbox" name="hobby"
+                        <input
+                          type="checkbox"
+                          name="hobby"
                           value={h}
                           defaultChecked={todo.hobby.includes(h)}
-                          onChange={() => { }}
+                          onChange={() => {}}
                           disabled={!isEditMode}
                         />
                         {h}
@@ -126,7 +130,12 @@ const DataTable = ({ todos }) => {
                   />
                 </td>
                 <td>
-                  <input disabled={!isEditMode} type="date" defaultValue={todo.date} name="date" />
+                  <input
+                    disabled={!isEditMode}
+                    type="date"
+                    defaultValue={todo.date}
+                    name="date"
+                  />
                 </td>
                 <td>
                   {isEditMode ? (
@@ -139,13 +148,13 @@ const DataTable = ({ todos }) => {
                   )}
                 </td>
                 <td>
-                  <select name="status" disabled={!isEditMode} defaultValue={todo.status}>
-                    <option value={true}>
-                      Active
-                    </option>
-                    <option value={false}>
-                      Inactive
-                    </option>
+                  <select
+                    name="status"
+                    disabled={!isEditMode}
+                    defaultValue={todo.status}
+                  >
+                    <option value={true}>Active</option>
+                    <option value={false}>Inactive</option>
                   </select>
                 </td>
                 <td>

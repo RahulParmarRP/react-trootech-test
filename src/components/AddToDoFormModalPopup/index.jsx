@@ -8,7 +8,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   const [gender, setGender] = useState(GENDER_LIST[1])
   const [age, setAge] = useState(18)
   const [active, setActive] = useState(true)
-  const [date, setDate] = useState(new Date().toLocaleDateString("fr-CA"))
+  const [date, setDate] = useState(new Date().toLocaleDateString('fr-CA'))
   const [title, setTitle] = useState('')
   const [username, setUsername] = useState('')
   const dispatch = useDispatch()
@@ -29,7 +29,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   }
   const handleUserNameChange = (e) => {
     const regex = /^[A-Za-z ]+$/
-    if (e.target.value === "" || regex.test(e.target.value)) {
+    if (e.target.value === '' || regex.test(e.target.value)) {
       setUsername(e.target.value)
     }
   }
@@ -57,7 +57,8 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
           />
           <div
             className="form-field"
-            onChange={(e) => setGender(e.target.value)}>
+            onChange={(e) => setGender(e.target.value)}
+          >
             {GENDER_LIST.map((g) => (
               <label className="gender-label" key={g}>
                 <input
@@ -96,14 +97,12 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
           />
           <select
             className="form-field"
-            name="status" defaultValue={false}
-            onChange={(e) => setActive(e.target.value)}>
-            <option value={true}>
-              Active
-            </option>
-            <option value={false}>
-              Inactive
-            </option>
+            name="status"
+            defaultValue={false}
+            onChange={(e) => setActive(e.target.value)}
+          >
+            <option value={true}>Active</option>
+            <option value={false}>Inactive</option>
           </select>
         </form>
       </Modal.Body>
