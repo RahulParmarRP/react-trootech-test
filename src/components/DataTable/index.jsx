@@ -24,7 +24,6 @@ const DataTable = ({ todos }) => {
   const [title, setTitle] = useState('')
   const [username, setUsername] = useState('')
   const [age, setAge] = useState('')
-  const ageRef = useRef(null)
 
   useEffect(() => {
     if (!isFirstRender.current && !isEditing) {
@@ -116,7 +115,7 @@ const DataTable = ({ todos }) => {
                           type="checkbox"
                           name="hobby"
                           value={h}
-                          defaultChecked={todo?.hobby.includes(h)}
+                          defaultChecked={todo?.hobby?.includes(h)}
                           onChange={() => { }}
                           disabled={!isEditMode}
                         />

@@ -1,5 +1,5 @@
 import todos from '../../__mock__/todos.json'
-
+import { generateId } from '../../utils'
 const initialState = {
   todos: [...todos],
 }
@@ -7,14 +7,22 @@ const initialState = {
 export const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO': {
-      return { ...state, todos: [...state.todos, action.payload] }
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          {
+            ...action.payload,
+            id: generateId(),
+            guid: generateId()
+          }
+        ]
+      }
     }
 
     case 'UPDATE_TODO': {
       const {
         id,
-        index,
-        guid,
         status,
         age,
         hobby,
