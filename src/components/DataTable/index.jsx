@@ -70,7 +70,7 @@ const DataTable = ({ todos }) => {
                       defaultValue={todo.username}
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      disabled={!isEditing}
+                      disabled={!isEditMode}
                     />
                   ) : (
                     `${todo.username}`
