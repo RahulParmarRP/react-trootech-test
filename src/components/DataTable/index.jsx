@@ -98,7 +98,8 @@ const DataTable = ({ todos }) => {
                             type="radio"
                             value={gender}
                             defaultChecked={todo.gender === g}
-                            disabled={!isEditMode}
+                            // disabled={!isEditMode}
+                            disabled
                             onChange={(e) => setGender(e.currentTarget.value)}
                           />
                           {g.toUpperCase()}
@@ -117,7 +118,8 @@ const DataTable = ({ todos }) => {
                           value={h}
                           defaultChecked={todo?.hobby?.includes(h)}
                           onChange={() => { }}
-                          disabled={!isEditMode}
+                          // disabled={!isEditMode}
+                          disabled
                         />
                         {h.toUpperCase()}
                       </label>
