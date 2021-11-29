@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Table from 'react-bootstrap/Table'
 import EditIcon from '@mui/icons-material/Edit'
 import DoneIcon from '@mui/icons-material/Done'
@@ -18,19 +18,29 @@ const DataTable = ({ todos }) => {
   const [isEditing, setIsEditing] = useState(false)
   const [currentEditingTodo, setCurrentEditingTodo] = useState(null)
   const [deleteTodoId, setDeleteTodoId] = useState(null)
+  const isFirstRender = useRef(true)
 
-  const [gender, setGender] = useState(null)
+  const [gender, setGender] = useState('')
   const [title, setTitle] = useState('')
   const [username, setUsername] = useState('')
-  const [age, setAge] = useState(null)
+  const [age, setAge] = useState('')
   const ageRef = useRef(null)
+
+  useEffect(() => {
+    if (!isFirstRender.current && !isEditing) {
+      alert('Todo updated successfully')
+    }
+  }, [isEditing])
+
+  useEffect(() => {
+    isFirstRender.current = false
+  }, [])
 
   const handleEditClick = (todoId) => {
     const selectedTodo = todos.find((todo) => todo.id === todoId)
     setCurrentEditingTodo(selectedTodo)
     setTitle(selectedTodo.title)
     setUsername(selectedTodo.username)
-    setGender(selectedTodo.gender)
     setIsEditing(true)
   }
   const handleUpdateClick = (id) => {
@@ -39,16 +49,15 @@ const DataTable = ({ todos }) => {
       title,
       username,
       age,
+      gender
     }
     dispatch({ type: 'UPDATE_TODO', payload: updatedTodo })
     setIsEditing(false)
-    alert('Todo updated successfully')
   }
   const handleDeleteClick = (todoId) => {
     setDeleteTodoId(todoId)
     setShowDeleteConfirmDialog(true)
   }
-
   return (
     <>
       <Table striped bordered responsive>
@@ -89,20 +98,17 @@ const DataTable = ({ todos }) => {
                         <label className="gender-label" key={g}>
                           <input
                             type="radio"
-                            value={g}
-                            checked={Boolean(todo.gender === GENDER_LIST[i])}
+                            value={gender}
+                            defaultChecked={todo.gender === g}
+                            checked={isEditMode && (gender === g)}
+                            disabled={!isEditMode}
+                            onChange={(e) => setGender(e.currentTarget.value)}
                           />
                           {g.toUpperCase()}
                         </label>
                       )
                     })}
                   </fieldset>
-                  {/* <div
-                    className="form-field"
-                    onChange={(e) => setGender(e.target.value)}
-                  >
-
-                  </div> */}
                 </td>
                 <td>
                   <div className="checkbox-wrapper">
@@ -116,7 +122,7 @@ const DataTable = ({ todos }) => {
                           onChange={() => { }}
                           disabled={!isEditMode}
                         />
-                        {h}
+                        {h.toUpperCase()}
                       </label>
                     ))}
                   </div>
