@@ -10,6 +10,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
   const [active, setActive] = useState(true)
   const [date, setDate] = useState(new Date().toLocaleDateString('fr-CA'))
   const [title, setTitle] = useState('')
+  const [hobby, setHobby] = useState([])
   const [username, setUsername] = useState('')
   const dispatch = useDispatch()
 
@@ -21,7 +22,7 @@ const AddToDoFormModalPopup = ({ show, onClose }) => {
     return true
   }
   const handleSubmitClick = () => {
-    const createToDo = { gender, active, title, age, username, date }
+    const createToDo = { gender, active, title, age, username, date, hobby }
     if (isFormValid(createToDo)) {
       dispatch({ type: 'ADD_TODO', payload: createToDo })
       onClose()
